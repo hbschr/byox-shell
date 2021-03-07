@@ -3,6 +3,7 @@ import shlex
 import subprocess
 import sys
 
+__version__ = '0.1.0'
 
 state = {
     'cwd': os.getcwd(),
@@ -27,6 +28,10 @@ def execute(*args):
 
 
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] in ['-v', '--version']:
+        print(__version__)
+        sys.exit(0)
+
     try:
         while True:
             x = input("> ")
