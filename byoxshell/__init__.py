@@ -1,6 +1,7 @@
 import os
 import shlex
 import subprocess
+import sys
 
 
 state = {
@@ -9,7 +10,7 @@ state = {
 
 
 def execute(*args):
-    if len(args) == 0:
+    if not len(args):
         return
 
     if args[0] == 'exit':
@@ -32,3 +33,4 @@ def main():
             execute(*shlex.split(x))
     except EOFError:
         print("exit")
+        sys.exit(0)
