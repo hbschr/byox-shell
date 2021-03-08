@@ -1,8 +1,9 @@
 from setuptools import setup, find_packages
+from byoxshell import __version__
 
 setup(
     name='byoxshell',
-    version='0.0.1',
+    version=__version__,
     author='Heiko Hübscher',
     author_email='heiko.huebscher@gmail.com',
     description='a simple unix shell, following "build your own x"',
